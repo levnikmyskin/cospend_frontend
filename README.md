@@ -22,4 +22,4 @@ In order to actually test login, communications, etc. with the Nextcloud instanc
         ),
     // ...
    ```
-  3. you should good to go
+  3. you should be good to go
