@@ -37,4 +37,10 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+
+    implementation 'androidx.browser:browser:1.5.0'
+
+    // third parties
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.12.0'
 }
