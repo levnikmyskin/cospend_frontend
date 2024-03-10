@@ -11,8 +11,8 @@ Nextcloud will be available at `http://localhost:8080`. **NOTICE** that in the a
 In order to actually test login, communications, etc. with the Nextcloud instance, **you need to**:  
 
   1. navigate to the Nextcloud data;
-    * You can retrieve the path by executing `docker volume inspect cospend-frontend_nextcloud-data`;
-  2. edit (probably with root access) the `config/config.php` file, and add:
+     * You can retrieve the path by executing `docker volume inspect cospend-frontend_nextcloud-data`;
+  3. edit (probably with root access) the `config/config.php` file, and add:
   ```php
     // ...
     'trusted_domains' => 
@@ -22,4 +22,4 @@ In order to actually test login, communications, etc. with the Nextcloud instanc
         ),
     // ...
    ```
-  3. you should good to go
+  3. you should be good to go
