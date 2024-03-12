@@ -24,6 +24,14 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 
+/**
+ * Helper class to deal with Nextcloud Login flow v2 (<a href="https://docs.nextcloud.com/server/latest/developer_manual/client_apis/LoginFlow/index.html#login-flow-v2">ref</a>).
+ * In short:
+ * 1. We first do a POST request to domain.name/index.php/login/v2. This will return a json which we serialize into NextcloudLoginInitResponse;
+ * 2. User should be redirected to the `login` endpoint (the activity will do this);
+ * 2.a In the meantime, we repeatedly poll the `poll` endpoint with the `token`, in a POST request. This returns 404 until the user has given consent;
+ * 3. Once we have our `NextcloudLoginFinalResponse`, the goal of this class is fulfilled.
+ */
 public class NextcloudLoginHelper {
 
     private static final String TAG = NextcloudLoginHelper.class.getSimpleName();
