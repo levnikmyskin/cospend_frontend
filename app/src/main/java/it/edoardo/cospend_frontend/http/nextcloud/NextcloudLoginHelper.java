@@ -33,7 +33,7 @@ import okhttp3.ResponseBody;
  * 3. Once we have our `NextcloudLoginFinalResponse`, the goal of this class is fulfilled.
  */
 public class NextcloudLoginHelper {
-
+    public static final String LOGIN_FLOW_INIT_PATH = "index.php/login/v2";
     private static final String TAG = NextcloudLoginHelper.class.getSimpleName();
     // TODO: replace this with a proper translatable resource string
     private static final String LOGIN_INIT_FAILED_STR = "Login initialization failed. Is your server ok?";
@@ -54,7 +54,7 @@ public class NextcloudLoginHelper {
         HttpUrl url = HttpUrl.parse(host);
         if (url == null)
             return null;
-        return url.newBuilder().addPathSegments("index.php/login/v2").build();
+        return url.newBuilder().addPathSegments(LOGIN_FLOW_INIT_PATH).build();
     }
 
     public void loginFlow(HttpUrl server) {
