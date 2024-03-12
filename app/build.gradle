@@ -26,6 +26,13 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+
 }
 
 dependencies {
@@ -35,12 +42,15 @@ dependencies {
     implementation libs.activity
     implementation libs.constraintlayout
     testImplementation libs.junit
+    testImplementation libs.junit.jupiter
+    testImplementation libs.mockito.core
+    androidTestImplementation libs.mockito.android
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
 
-    implementation 'androidx.browser:browser:1.5.0'
+    implementation libs.browser
 
     // third parties
-    implementation 'com.google.code.gson:gson:2.10.1'
-    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.12.0'
+    implementation libs.gson
+    implementation libs.okhttp
 }
